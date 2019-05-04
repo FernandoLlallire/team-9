@@ -25,7 +25,7 @@ render(){
         <div className="col-md-1">
         </div>
         <div className="col-md-4">
-          <h1 className="profileName">{this.props.candidata.nombre + " " + this.props.candidata.apellido}}</h1>
+          <h1 className="profileName">{this.props.candidata.nombre + " " + this.props.candidata.apellido}</h1>
           <h3 className="profileName">{this.props.candidata.campo}</h3>
           <div className="contaierSocialMedia">
             <a href="#" className="fa fa-facebook iconZise"></a>
@@ -39,7 +39,7 @@ render(){
       </div>
       <div className="row descriptionProfile justify-content-center">
         <div className="col-md-10 ">
-          <p> {this.props.candidata.extracto}} </p>
+          <p> {this.props.candidata.extracto} </p>
         </div>
       </div>
       <div className="row descriptionProfile justify-content-center align-items-center">
