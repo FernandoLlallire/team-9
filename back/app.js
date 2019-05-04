@@ -68,7 +68,7 @@ function insertPostulado(postulado){
 
 app.post('/api/setWinners', function(req, res) {
   console.log("SETSELEEE")
-  if(setSelected(req.body.id)){
+  if(setWinners(req.body)){
     res.send("ok")
   }
   
@@ -78,7 +78,18 @@ app.post('/api/setWinners', function(req, res) {
 
 
 });
-
+function setWinners(ids){
+  
+  ids.forEach(function(id){
+    q="call addSelectedCandidate(?,?) "
+    connection.query(q,[id,""],function(err,rows){
+          if(err){ console.log(err); return false;}
+          console.log(rows);
+          console.log("add selected cand ok");
+          return true;
+      });
+  });
+}
 
 app.get('/api/getCandidate', function(req, res) {
   console.log("getCandidate")
