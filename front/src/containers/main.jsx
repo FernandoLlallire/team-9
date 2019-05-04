@@ -7,9 +7,10 @@ import AdminView from './adminView';
 import NavBar from '../components/NavBar';
 import Profile from '../containers/Profile'
 import Winners from './Winners'
-export default class Main extends React.Component {
-  // componentDidMount() {};
 
+
+
+export default class Main extends React.Component {
 
   render() {
     return (
@@ -20,7 +21,7 @@ export default class Main extends React.Component {
             <Route path="/home" render={() => <Home />} />
             <Route exact path="/addCandidate" render={({ history }) => (<AddCandidate history={history} />)} />
             <Route exact path="/profile/:candID" render={({ history , match }) => (<Profile history={history} idCand={match.params.candID} />)} />
-            <Route exact path="/adminView" render={({ history }) => Winners(<AdminView history={history} />)} />
+            <Route exact path="/adminView" render={({ history }) => (<AdminView history={history} />)} />
             <Route exact path="/winners" render={({ history }) => (<Winners history={history} />)} />
             {/* <Redirect from="/" to="/home" /> */}
           </Switch>
