@@ -39,6 +39,7 @@ render(){
       </div>
       <div className="row descriptionProfile justify-content-center">
         <div className="col-md-10 ">
+          <h4> Extracto </h4 >
           <p> {this.props.candidata.extracto} </p>
         </div>
       </div>
