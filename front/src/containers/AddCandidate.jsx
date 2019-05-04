@@ -13,7 +13,7 @@ class AddCandidate extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+
     handleChange (e) {
       console.log("===============> STATE ", this.state )
       this.setState(
@@ -34,7 +34,7 @@ class AddCandidate extends React.Component {
         }
         this.props.saveCandidate(this.state)
           .then(() => this.setState({ message: 'Successfully saved Candidate' }));
-      
+
     }
 
     render () {
