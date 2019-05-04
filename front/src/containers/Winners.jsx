@@ -12,7 +12,6 @@ class AdminView extends React.Component {
             selected: [],
             selectedNames: [],
         };
-        this.filter=this.filter.bind(this);
     }
 
     componentDidMount(){
@@ -20,23 +19,28 @@ class AdminView extends React.Component {
     }
 
     render() {
-
-        return (
+        return(
             <div class="card-deck">
+            {
+                this.props.winners.map( elemento => 
             <div class="card">
               <img class="card-img-top rounded-circle" src="img1.jpg" alt="Card image cap"></img>
               <div class="card-body">
-                <h5 class="card-title">Ana Perez</h5>
-                <p class="card-text">Edad: 30</p>
-                <p class="card-text">Area: Software</p>
+                <h5 class="card-title">{elemento.nombre}+ +{elemento.apellido} }</h5>
+                <p class="card-text">Edad: {elemento.edad}}</p>
+                <p class="card-text">Area: {elemento.campo}}</p>
                 <a href = "https://www.facebook.com" class="fa fa-facebook"></a>
                  <a href="https://www.twitter.com" class="fa fa-twitter"></a>
                 <a href="https://www.gmail.com" class = "fa fa-google"></a>
                 <a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
               </div>
             </div>
+                )
+            }
+            
             </div>
-        );
+            
+        )
     }
 }
 
