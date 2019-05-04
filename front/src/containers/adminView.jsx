@@ -101,6 +101,7 @@ class AdminView extends React.Component {
         }
     }
     filter(parametro){
+        this.props.fetchCandidates().then(()=>{
             let auxArray= this.props.candidatas;
             let arrFiltrado=[];
             for (let i=0; i<auxArray.length; i++){
@@ -109,7 +110,8 @@ class AdminView extends React.Component {
                 }
             }
             this.props.setCandidates(arrFiltrado);
-
+        }
+        )
     }
     // setWinners(winners){
     //     this.props.setWinners(winners);
