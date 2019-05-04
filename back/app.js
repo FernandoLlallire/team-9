@@ -71,9 +71,6 @@ app.post('/api/setWinners', function(req, res) {
 
 function setWinners(ids){  
 
-  for( i=0;i<ids.length;i++){
-    console.log(ids[i])
-  }
   ids.forEach(function(id){
     q="call addSelectedCandidate(?,?) "
     connection.query(q,[id,""],function(err,rows){
