@@ -11,6 +11,7 @@ export default class CandidateTable extends React.Component {
   }
   render () {
     return (
+    
 <div>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Ver seleccionadas</button>
         <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -18,6 +18,7 @@ export const setCandidates = function setCandidates(candidatos) {
 };
 
 export const setCandidate = function setCandidate(candidata) {
+  
   return {
     type: SET_CANDIDATA,
     candidata
@@ -43,6 +44,6 @@ export const setWinners = (winners) => {
     .then( respuesta => console.log(respuesta))}
 
 export const fetchCandidate = (idCand) => dispatch =>
-  axios.get(`http://localhost:3001/api/getCandidates/${idCand}`)
-    .then(res => res.data)
+  axios.get(`http://localhost:3001/api/getUser/${idCand}`)
+    .then(res => res.data[0])
     .then(candidata => dispatch(setCandidate(candidata)));
