@@ -59,6 +59,11 @@ function getWinners(res){
   })
 }
 
+app.get('/api/getUser/:id', function(req, res) {
+  getCandidate(req.params,res)
+  console.log(req.params.id);
+});
+
 app.post('/api/setWinners', function(req, res) {
   
   setWinners(req.body.winners)
