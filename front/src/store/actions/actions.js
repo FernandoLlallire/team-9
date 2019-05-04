@@ -33,7 +33,7 @@ export const setCandidate = function setCandidate(candidata) {
 };
 
 export const saveCandidate = (candidate) =>
-  axios.post('/api/addCandidate', { candidate })
+  axios.post('http://localhost:3001/api/addCandidate', { candidate })
     .then(res => res.data)
     .then(respuesta => {
       console.log('RESPUESTAAA', respuesta)

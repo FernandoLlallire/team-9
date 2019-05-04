@@ -13,11 +13,11 @@ const candidate = (props) => {
                 </button>
               </div>
               <div className="modal-body">
-                <p>{props.message && props.message}</p>
+                <p>Candidato creado y notificado con exito!</p>
               </div>
               <div className="modal-footer">
                 {/* { */}
-                 <button type="button" onClick={() => props.onClick()} className="btn btn-lg" style={{ backgroundColor: '#DE411B' }} data-dismiss="modal" > { props.message === 'Successfully saved Candidate' ? 'Go to Candidates' : 'Go back' } </button>
+                 <button type="button" onClick={() => props.onClick()} className="btn btn-lg" style={{ backgroundColor: 'green' }} data-dismiss="modal" > Ok </button>
               </div>
             </div>
           </div>

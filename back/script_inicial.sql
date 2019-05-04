@@ -83,3 +83,12 @@ BEGIN
 END
 
 SELECT * FROM Postulado
+
+insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero);
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Ana','Perez',30,'Ingenieria','Cordoba','Excelente profesional!','Ingeniera en Sistemas con mas de 15 años de experiencia en el diseño de soluciones para ONGs.        Tambien se desarrolla en el area de investigaciones del CONICET y es una profesional renombrada a nivel mundial por sus publicaciones en inteligencia artificial.','','','','ana_perez2000@hotmail.com','tempmail@fake.com',88224646,78963214);
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Patricia','Garcia',46,'Tecnologia','CABA','Admirable','Gracias a su conocimiento se logro el desarrollo de un satelite que permite monitorear el rendimiento de los campos argentinos','','','','patrigarcia00@hotmail.com','tempmail@fake.com','91344934','64942914');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Lucia','Moreno',20,'Matematica','Tierra del Fuego','Innovadora!','Lucha por los derechos de las mujeres sin igual. Por medio de su trabajo constante en una ONG logro aumentar la cantidad de mujeres empleadas en IT.','','','','lumoreno2000@hotmail.com','tempmail@fake.com','40420613','49167546');
