@@ -27,32 +27,13 @@ app.get('/', function(req, res) {
 });
 
 app.post('/api/addCandidate', function(req, res) {
-  /*connection.query('SELECT * FROM Postulado', (err,rows) => {
-    if(err) throw err;
-
-    console.log('Data received from Db:\n');
-    rows.forEach( (row) => {
-      console.log(`${row.nombre} y su apellido ${row.apellido}`);
-    res.send(row.nombre+row.apellido)
-    asd();
-    });
-  });  
-*/
-
-  if(insertPostulado(req.body.candidate)){
-    res.send("ok")
-  }
+   
+  insertPostulado(req.body.candidate)
   
-  else{
-    res.send("wrong")
-  }
-
-
 });
 
 
 function insertPostulado(postulado){
-  console.log(postulado);
  query = "CALL addCandidate(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  connection.query(query,[postulado.nombre,postulado.apellido,postulado.edad,postulado.campo,postulado.provincia,postulado.motivo_post,postulado.extracto,postulado.foto,postulado.video,
    postulado.audio,postulado.email,postulado.mail_tercero,postulado.telefono,postulado.telefono_tercero],function(err,rows){
@@ -62,8 +43,6 @@ function insertPostulado(postulado){
        return true;
    });
 }
-
-
 app.get('/api/getWinners', function(req, res) {
   console.log("getwinners")
   getWinners(res)
@@ -81,19 +60,11 @@ function getWinners(res){
 }
 
 app.post('/api/setWinners', function(req, res) {
-  console.log("SETSELEEE")
-  if(setWinners(req.body)){
-    res.send("ok")
-  }
   
-  else{
-    res.send("wrong")
-  }
-
-
+  setWinners(req.body)
 });
-function setWinners(ids){
-  
+
+function setWinners(ids){  
   ids.forEach(function(id){
     q="call addSelectedCandidate(?,?) "
     connection.query(q,[id,""],function(err,rows){
@@ -106,11 +77,7 @@ function setWinners(ids){
 }
 
 app.get('/api/getCandidate', function(req, res) {
-  console.log("getCandidate")
-  console.log(req.body)
   getCandidate(req.body,res)
-
-
 });
 
 function getCandidate(id,res){ 
@@ -125,27 +92,17 @@ function getCandidate(id,res){
    
 }
 
-//routes = require('./routes/tvshow')(app);
-
-function asd(){
-  console.log("ASD");
-}
 
 
 app.get('/api/getAllCandidates', function(req, res) {
-  //d = getAllCandidates(res)
   
-  getAll2(res)
-//res.send("ASD")
+  getAllCandidates(res)
   
 
 
 });
 
-
-
-
-function getAll2(res){
+function getAllCandidates(res){
   
   data = []
   sequelize.query("SELECT * FROM `Postulado`", { type: sequelize.QueryTypes.SELECT})
@@ -156,47 +113,6 @@ function getAll2(res){
   console.log("length" + data.length)
 
 }
-
-
-function getAllCandidates(res){
-
-  connection.query('SELECT * FROM Postulado', (err,rows) => {
-    if(err) throw err;
-    data = []
-    console.log('Data received from Db:\n');
-    rows.forEach( (row) => {
-      
-      p = new Object()
-      p.apellido=row.apellido
-      p.nombre=row.nombre
-      p.edad=row.edad
-      p.campo=row.campo
-      p.provincia=row.provincia
-      p.motivo_post=row.motivo_post
-      p.extracto=row.extracto
-      p.foto=row.foto
-      p.video=row.video
-      p.audio=row.audio
-      p.email=row.email
-      p.mail_tercero=row.mail_tercero
-      p.telefono=row.telefono
-      p.telefono_tercero=row.telefono_tercero
-      data.push(p)
-      console.log(p)
-      console.log(`${row.nombre} y su apellido ${row.apellido} y ${row}`);
-    //res.send(row.nombre+row.apellido)
-    //asd();
-    //return data
-    console.log("send d")
-    res.send((d))
-  });
-    //console.log("DATAAAAAAAAAA   " +data[0].nombre)
-    
-    
-  })
-
-}
-
 
 
 
