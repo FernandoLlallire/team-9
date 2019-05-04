@@ -67,7 +67,7 @@ function insertPostulado(postulado){
 
 
 app.post('/api/setSelected', function(req, res) {
-
+  console.log("SETSELEEE")
   if(setSelected(req.body.id)){
     res.send("ok")
   }
@@ -80,7 +80,9 @@ app.post('/api/setSelected', function(req, res) {
 });
 
 
-function setSelected(id){}
+function setSelected(id){ 
+  return 
+}
 
 //routes = require('./routes/tvshow')(app);
 

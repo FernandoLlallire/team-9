@@ -25,6 +25,6 @@ export const saveCandidate = (candidate) => dispatch =>
     });
 
 export const fetchCandidates = () => dispatch =>
-axios.get('/api/getAllCandidates')
+axios.get('http://localhost:3001/api/getAllCandidates')
   .then(res => res.data)
   .then(candidatos => dispatch(setCandidates(candidatos)));
