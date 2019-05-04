@@ -1,6 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchCandidate } from '../store/actions/actions';
 
-const profile = (props) => {
+class Profile extends React.Component {
+  
+  constructor(props){
+    super(props)
+  }
+
+  componentDidMount(){
+    this.props.fetchCandidate(this.props.idCand);
+  }
+
+render(){
+  console.log("+===================> PROPS", this.props)
   return(
     <div className="profileBody">
       <div className=" dataProfileImageName row align-items-center justify-content-center">
@@ -41,5 +54,23 @@ const profile = (props) => {
 
     </div>
   );
-};
-export default profile;
+}
+}
+
+
+function mapStateToProps(state) {
+  return {
+    candidata: state.adminReducer.candidata,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchCandidate: (candID) => dispatch(fetchCandidate(candID))
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Profile);
