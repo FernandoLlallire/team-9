@@ -4,6 +4,47 @@ import axios from 'axios';
 import CandidateTable from '../components/CandidateTable'
 import { saveCandidate, fetchCandidates, setWinners } from '../store/actions/actions'
 
+var dataPie = [
+    {
+        value: 300,
+        color:"#9417b7",
+        highlight: "#FF5A5E",
+        label: "18 a 25"
+    },
+    {
+        value: 50,
+        color: "#34ad58",
+        highlight: "#5AD3D1",
+        label: "25 a 30"
+    },
+    {
+        value: 100,
+        color: "#3962cc",
+        highlight: "#FFC870",
+        label: "30 a 35"
+    }
+]
+
+var data = {
+            labels: ["IT", "Ciencias", "Ingenieria"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(191, 63, 127)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 80,]
+                }
+            ]
+        };
+
+var LineChart = require("react-chartjs").Line;
+var PieChart = require("react-chartjs").Pie;
+
+
 class AdminView extends React.Component {
     constructor(props) {
         super(props);
@@ -64,9 +105,24 @@ class AdminView extends React.Component {
     // }
 
     render() {
+    
         return (
-            <div>
-                <h1>Administradora</h1>
+            <div class="graphContainer">
+                  <div class="row">
+                    <div class="col-sm">
+                        <h3 class="text-center"> Chicas por area profesional</h3>
+                        <LineChart data={data} width="600" height="250"/>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                    <div class="col-sm">
+                      <h3 class="text-center"> Chicas por edad </h3>
+                      <PieChart data={dataPie} width="600" height="250" />
+                    </div>
+                  </div>
+                <div>
+            <h1>Seleccion de reconocidas</h1>                    
+                </div>
                 <CandidateTable
                     candidates={this.state.candidates}
                     onClick={this.onClick}
