@@ -82,6 +82,17 @@ function setWinners(ids){
   });
 }
 
+app.get('api/filter',function(req,res){
+  q = "select * from Postulado where campo = "+req.body.campo
+  sequelize.query(q, { type: sequelize.QueryTypes.SELECT})
+  .then(row => {
+    console.log("ASD" + JSON.stringify(row))
+    res.send(JSON.stringify(row))
+  })
+  
+})
+
+
 app.get('/api/getCandidate', function(req, res) {
   getCandidate(req.body,res)
 });
