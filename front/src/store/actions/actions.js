@@ -45,7 +45,6 @@ axios.get('http://localhost:3001/api/getAllCandidates')
   .then(candidatos => dispatch(setCandidates(candidatos)));
 
 export const setWinners = (winners) => {
-  console.log("AAAAAAAAAA",winners)
   axios.post('http://localhost:3001/api/setWinners', { winners })
     .then(res => res.data)
     .then( respuesta => console.log(respuesta))}
@@ -58,4 +57,4 @@ export const fetchCandidate = (idCand) => dispatch =>
 export const fetchWinners = () => dispatch =>
   axios.get('http://localhost:3001/api/getWinners')
     .then(res => res.data)
-    .then(winners => dispatch(setWinners(winners)));
+    .then(winners => dispatch(setWinnersss(winners)));

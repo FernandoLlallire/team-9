@@ -4,7 +4,7 @@ const initialState = {
   nothingForNow: "",
   candidatos: [],
   candidata: {},
-  winners
+  winners:[]
 };
 
 export default function (state = initialState, action) {
