@@ -41,7 +41,7 @@ drop table Rechazado;
 insert into Postulado (nombre,apellido,edad,campo,motivo_post,extracto) values ('code','good',23,'Ciencias Marinas',
                                                                             'Es una genia!','Soy estudiante');
 
-CREATE PROCEDURE addPostulado (
+CREATE PROCEDURE addCandidate (
 in    nombre varchar(255),
 in    apellido varchar(255),
 in    edad int,
