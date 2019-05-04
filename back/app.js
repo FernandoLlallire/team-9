@@ -27,32 +27,13 @@ app.get('/', function(req, res) {
 });
 
 app.post('/api/addCandidate', function(req, res) {
-  /*connection.query('SELECT * FROM Postulado', (err,rows) => {
-    if(err) throw err;
-
-    console.log('Data received from Db:\n');
-    rows.forEach( (row) => {
-      console.log(`${row.nombre} y su apellido ${row.apellido}`);
-    res.send(row.nombre+row.apellido)
-    asd();
-    });
-  });  
-*/
-
-  if(insertPostulado(req.body.candidate)){
-    res.send("ok")
-  }
+   
+  insertPostulado(req.body.candidate)
   
-  else{
-    res.send("wrong")
-  }
-
-
 });
 
 
 function insertPostulado(postulado){
-  console.log(postulado);
  query = "CALL addCandidate(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  connection.query(query,[postulado.nombre,postulado.apellido,postulado.edad,postulado.campo,postulado.provincia,postulado.motivo_post,postulado.extracto,postulado.foto,postulado.video,
    postulado.audio,postulado.email,postulado.mail_tercero,postulado.telefono,postulado.telefono_tercero],function(err,rows){
@@ -62,13 +43,79 @@ function insertPostulado(postulado){
        return true;
    });
 }
+app.get('/api/getWinners', function(req, res) {
+  console.log("getwinners")
+  getWinners(res)
 
 
-//routes = require('./routes/tvshow')(app);
+});
 
-function asd(){
-  console.log("ASD");
+function getWinners(res){
+  query = "SELECT * FROM Postulado p join Aceptado a on p.id=a.id_postulado"
+  sequelize.query(query, { type: sequelize.QueryTypes.SELECT})
+  .then(row => {
+    console.log("ASD" + JSON.stringify(row))
+    res.send(JSON.stringify(row))
+  })
 }
+
+app.post('/api/setWinners', function(req, res) {
+  
+  setWinners(req.body)
+});
+
+function setWinners(ids){  
+  ids.forEach(function(id){
+    q="call addSelectedCandidate(?,?) "
+    connection.query(q,[id,""],function(err,rows){
+          if(err){ console.log(err); return false;}
+          console.log(rows);
+          console.log("add selected cand ok");
+          return true;
+      });
+  });
+}
+
+app.get('/api/getCandidate', function(req, res) {
+  getCandidate(req.body,res)
+});
+
+function getCandidate(id,res){ 
+  data = []
+  query = "SELECT * FROM Postulado where id="+id.id
+  sequelize.query(query, { type: sequelize.QueryTypes.SELECT})
+  .then(row => {
+    console.log("ASD" + JSON.stringify(row))
+    res.send(JSON.stringify(row))
+  })
+  console.log("length" + data.length)
+   
+}
+
+
+
+app.get('/api/getAllCandidates', function(req, res) {
+  
+  getAllCandidates(res)
+  
+
+
+});
+
+function getAllCandidates(res){
+  
+  data = []
+  sequelize.query("SELECT * FROM `Postulado`", { type: sequelize.QueryTypes.SELECT})
+  .then(row => {
+    console.log("ASD" + JSON.stringify(row))
+    res.send(JSON.stringify(row))
+  })
+  console.log("length" + data.length)
+
+}
+
+
+
 
 const connection = mysql.createConnection({
   host: 'localhost',
