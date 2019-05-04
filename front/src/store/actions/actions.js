@@ -17,6 +17,13 @@ export const setCandidates = function setCandidates(candidatos) {
   };
 };
 
+export const setWinnersss = function setWinners(winners) {
+  return {
+    type: SET_WINNERS,
+    winners,
+  };
+};
+
 export const setCandidate = function setCandidate(candidata) {
   
   return {
@@ -47,3 +54,8 @@ export const fetchCandidate = (idCand) => dispatch =>
   axios.get(`http://localhost:3001/api/getUser/${idCand}`)
     .then(res => res.data[0])
     .then(candidata => dispatch(setCandidate(candidata)));
+
+export const fetchWinners = () => dispatch =>
+  axios.get('http://localhost:3001/api/getWinners')
+    .then(res => res.data)
+    .then(winners => dispatch(setWinners(winners)));

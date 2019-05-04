@@ -21,6 +21,7 @@ export default class Main extends React.Component {
             <Route exact path="/addCandidate" render={({ history }) => (<AddCandidate history={history} />)} />
             <Route exact path="/profile/:candID" render={({ history , match }) => (<Profile history={history} idCand={match.params.candID} />)} />
             <Route exact path="/adminView" render={({ history }) => (<AdminView history={history} />)} />
+            <Route exact path="/winners" render={({ history }) => (<AdminView history={history} />)} />
             {/* <Redirect from="/" to="/home" /> */}
           </Switch>
         </section>

@@ -1,9 +1,10 @@
-import { DO_NOTHING, SET_CANDIDATOS, SET_CANDIDATA } from '../constants';
+import { DO_NOTHING, SET_CANDIDATOS, SET_CANDIDATA, SET_WINNERS } from '../constants';
 
 const initialState = {
   nothingForNow: "",
   candidatos: [],
-  candidata: {}
+  candidata: {},
+  winners
 };
 
 export default function (state = initialState, action) {
@@ -17,6 +18,9 @@ export default function (state = initialState, action) {
     case SET_CANDIDATA:{
         return Object.assign({}, state, { candidata: action.candidata });
       }
+    case SET_WINNERS:{
+        return Object.assign({}, state, { winners: action.winners });
+      }  
     default:
       return state;
   }
