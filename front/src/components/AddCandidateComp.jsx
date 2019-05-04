@@ -33,27 +33,27 @@ const candidate = (props) => {
             <p/>
             <div className="form-group " >
               <label htmlFor="lastName">* Nombre</label>
-              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="LastName" placeholder="Name" name='name' />
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="nombre" placeholder="nombre" name='nombre' />
             </div>
             <div className="form-group">
               <label htmlFor="firsstName">* Apellido</label>
-              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="First Name" placeholder="Last Name" name='surname' />
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="apellido" placeholder="apellido" name='apellido' />
             </div>
             <div className="form-group">
               <label htmlFor="email">* Edad</label>
-              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="Email" placeholder="Email" name='email' />
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="edad" placeholder="edad" name='edad' />
             </div>
             <div className="form-group">
               <label htmlFor="number">* e-mail</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="phone" placeholder="Mobile Number" name='telNumber' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="email" placeholder="e-mail" name='email' />
             </div>
             <div className="form-group">
               <label htmlFor="number">* Teléfono</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="phone" placeholder="Mobile Number" name='telNumber' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="telefono" placeholder="Mobile Number" name='telefono' />
             </div>
             <div className="form-group">
               <label htmlFor="number">* Rubro de ciencia/tecnología</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="phone" placeholder="Mobile Number" name='telNumber' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="campo" placeholder="Mobile Number" name='campo' />
             </div>
             <div className="form-group">
               <label htmlFor="workExperince">Extracto</label>
@@ -61,11 +61,11 @@ const candidate = (props) => {
             </div>
             <div className="form-group">
               <label htmlFor="number">* Teléfono aplicante</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="phone" placeholder="Mobile Number" name='telNumber' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="telefono_tercero" placeholder="telefono tercero" name='telefono_tercero' />
             </div>
             <div className="form-group">
               <label htmlFor="number">* e-mail aplicante</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="phone" placeholder="Mobile Number" name='telNumber' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="mail_tercero" placeholder="emailTercero" name='telefono_tercero' />
             </div>
             <div>
               <button onSubmit={props.onSubmit} type="submit" className="btn boton btn-lg botonLogin btn-primary" data-toggle="modal" data-target="#exampleModal">Add Applicant</button>

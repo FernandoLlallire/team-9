@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import axios from 'axios';
 import {DO_NOTHING
 } from '../constants';
@@ -11,4 +10,9 @@ export const setCart = function setCart(cart) {
   };
 };
 
-
+export const saveCandidate = (candidate) => dispatch =>
+  axios.post('/api/addCandidate', { candidate })
+    .then(res => res.data)
+    .then(respuesta => {
+      console.log('RESPUESTAAA', respuesta)
+    });
