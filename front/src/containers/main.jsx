@@ -6,8 +6,12 @@ import AddCandidate from './AddCandidate';
 import AdminView from './adminView';
 import NavBar from '../components/NavBar';
 import Profile from '../containers/Profile'
+<<<<<<< HEAD
 import Winners from './ Winners'
 
+=======
+import Winners from './Winners'
+>>>>>>> 95b13b9be331d6669791f7de5c49253f3491f96a
 export default class Main extends React.Component {
   // componentDidMount() {};
 
@@ -21,7 +25,11 @@ export default class Main extends React.Component {
             <Route path="/home" render={() => <Home />} />
             <Route exact path="/addCandidate" render={({ history }) => (<AddCandidate history={history} />)} />
             <Route exact path="/profile/:candID" render={({ history , match }) => (<Profile history={history} idCand={match.params.candID} />)} />
+<<<<<<< HEAD
             <Route exact path="/adminView" render={({ history }) => Winners(<AdminView history={history} />)} />
+=======
+            <Route exact path="/adminView" render={({ history }) => (<AdminView history={history} />)} />
+>>>>>>> 95b13b9be331d6669791f7de5c49253f3491f96a
             <Route exact path="/winners" render={({ history }) => (<Winners history={history} />)} />
             {/* <Redirect from="/" to="/home" /> */}
           </Switch>

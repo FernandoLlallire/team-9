@@ -19,6 +19,7 @@ export default function (state = initialState, action) {
         return Object.assign({}, state, { candidata: action.candidata });
       }
     case SET_WINNERS:{
+      console.log("asd",action.winners)
         return Object.assign({}, state, { winners: action.winners });
       }  
     default:
