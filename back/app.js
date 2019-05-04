@@ -66,7 +66,7 @@ function insertPostulado(postulado){
 
 
 
-app.post('/api/setSelected', function(req, res) {
+app.post('/api/setWinners', function(req, res) {
   console.log("SETSELEEE")
   if(setSelected(req.body.id)){
     res.send("ok")
@@ -80,8 +80,24 @@ app.post('/api/setSelected', function(req, res) {
 });
 
 
-function setSelected(id){ 
-  return 
+app.get('/api/getCandidate', function(req, res) {
+  console.log("getCandidate")
+  console.log(req.body)
+  getCandidate(req.body,res)
+
+
+});
+
+function getCandidate(id,res){ 
+  data = []
+  query = "SELECT * FROM Postulado where id="+id.id
+  sequelize.query(query, { type: sequelize.QueryTypes.SELECT})
+  .then(row => {
+    console.log("ASD" + JSON.stringify(row))
+    res.send(JSON.stringify(row))
+  })
+  console.log("length" + data.length)
+   
 }
 
 //routes = require('./routes/tvshow')(app);
