@@ -1,21 +1,26 @@
 {
-  "name": "techiegirls",
+  "name": "nodemongoex",
   "version": "1.0.0",
-  "description": "Back end de techieGirls",
-  "main": "server.js",
-  "scripts": {
-    "start": "nodemon server.js"
-  },
-  "author": "utnians",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.5.1",
+    "express": "^4.7.1",
+    "method-override": "^2.1.2",
+    "mongoose": "^5.5.5",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.4",
     "cookie-parser": "^1.4.4",
-    "express": "^4.16.4",
     "morgan": "^1.9.1",
     "nodemailer": "^5.1.1",
     "nodemon": "^1.18.10",
     "path": "^0.12.7",
     "pg": "^7.8.2"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
