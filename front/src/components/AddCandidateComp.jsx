@@ -39,7 +39,12 @@ const candidate = (props) => {
               <input onChange={props.onChange} type="text" className="form-control inputLogin" id="edad" placeholder="* Edad" name='edad' />
             </div>
             <div className="form-group">
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="email" placeholder="* E-mail" name='email' />
+              <label htmlFor="email">* Provincia</label>
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="provincia" placeholder="provincia" name='provincia' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* e-mail</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="email" placeholder="e-mail" name='email' />
             </div>
             <div className="form-group">
               <label htmlFor="number">* Teléfono</label>
@@ -51,7 +56,7 @@ const candidate = (props) => {
             </div>
             <div className="form-group">
               <label htmlFor="workExperince">Extracto</label>
-              <textarea onChange={props.onChange} className="form-control inputLogin" id="WorkExperience" rows="3" name="expertise"></textarea>
+              <textarea onChange={props.onChange} className="form-control inputLogin" id="WorkExperience" rows="3" name="extracto"></textarea>
             </div>
             <div className="form-group">
               <label htmlFor="number">* Teléfono aplicante</label>
@@ -59,7 +64,23 @@ const candidate = (props) => {
             </div>
             <div className="form-group">
               <label htmlFor="number">* e-mail aplicante</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="mail_tercero" placeholder="emailTercero" name='telefono_tercero' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="mail_tercero" placeholder="emailTercero" name='mail_tercero' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* Motivo</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="motivo" placeholder="motivo" name='motivo_post' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* Foto</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="foto" placeholder="foto" name='foto' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* Video</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="video" placeholder="video" name='video' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* Audio</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="audio" placeholder="audio" name='audio' />
             </div>
             <div>
               <button onSubmit={props.onSubmit} type="submit" className="btn boton btn-lg botonLogin btn-primary" data-toggle="modal" data-target="#exampleModal">Add Applicant</button>

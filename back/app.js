@@ -19,12 +19,14 @@ app.use(function(req, res, next) {
   next();
 });
 
+var cors = require('cors');
+app.use(cors());
 
 app.get('/', function(req, res) {
   res.send("Hello world!");
 });
 
-app.post('/api/savePostulado', function(req, res) {
+app.post('/api/addCandidate', function(req, res) {
   /*connection.query('SELECT * FROM Postulado', (err,rows) => {
     if(err) throw err;
 
@@ -38,11 +40,11 @@ app.post('/api/savePostulado', function(req, res) {
 */
 
   if(insertPostulado(req.body)){
-    res.send(200)
+    res.send("ok")
   }
   
   else{
-    res.send(403)
+    res.send("wrong")
   }
 
 
