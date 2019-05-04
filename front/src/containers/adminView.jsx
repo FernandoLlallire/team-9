@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import CandidateTable from '../components/CandidateTable'
-import { saveCandidate, fetchCandidates, setWinners } from '../store/actions/actions'
+import { saveCandidate, fetchCandidates, setWinners, setCandidates } from '../store/actions/actions'
 
 var dataPie = [
     {
@@ -81,6 +81,7 @@ class AdminView extends React.Component {
                         mail:"daniela@mail.com" }]
         };
         this.onClick= this.onClick.bind(this);
+        this.filter=this.filter.bind(this);
     }
 
     componentDidMount(){
@@ -99,7 +100,17 @@ class AdminView extends React.Component {
             this.props.history.push(`/profile/${candidateID}`)
         }
     }
+    filter(parametro){
+            let auxArray= this.props.candidatas;
+            let arrFiltrado=[];
+            for (let i=0; i<auxArray.length; i++){
+                if (auxArray[i].campo===parametro){
+                    arrFiltrado.push(auxArray[i]);
+                }
+            }
+            this.props.setCandidates(arrFiltrado);
 
+    }
     // setWinners(winners){
     //     this.props.setWinners(winners);
     // }
@@ -129,6 +140,7 @@ class AdminView extends React.Component {
                     seleccionadas={this.state.selected}
                     nombresSelec={this.state.selectedNames}
                     setWinners={this.props.setWinners}
+                    filter={this.filter}
                 />
             </div>
         );
@@ -145,7 +157,8 @@ function mapDispatchToProps(dispatch) {
     return {
         saveCandidate: (candidate) => dispatch(saveCandidate(candidate)),
         fetchCandidates: () => dispatch(fetchCandidates()),
-        setWinners: (winners) => dispatch(setWinners(winners))
+        setWinners: (winners) => dispatch(setWinners(winners)),
+        setCandidates: (candidatas) => dispatch(setCandidates(candidatas))
     };
 }
 
