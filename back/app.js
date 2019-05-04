@@ -59,12 +59,21 @@ function getWinners(res){
   })
 }
 
+app.get('/api/getUser/:id', function(req, res) {
+  getCandidate(req.params,res)
+  console.log(req.params.id);
+});
+
 app.post('/api/setWinners', function(req, res) {
   
-  setWinners(req.body)
+  setWinners(req.body.winners)
 });
 
 function setWinners(ids){  
+
+  for( i=0;i<ids.length;i++){
+    console.log(ids[i])
+  }
   ids.forEach(function(id){
     q="call addSelectedCandidate(?,?) "
     connection.query(q,[id,""],function(err,rows){
