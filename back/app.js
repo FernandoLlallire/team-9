@@ -64,11 +64,99 @@ function insertPostulado(postulado){
 }
 
 
+
+
+app.post('/api/setSelected', function(req, res) {
+
+  if(setSelected(req.body.id)){
+    res.send("ok")
+  }
+  
+  else{
+    res.send("wrong")
+  }
+
+
+});
+
+
+function setSelected(id){}
+
 //routes = require('./routes/tvshow')(app);
 
 function asd(){
   console.log("ASD");
 }
+
+
+app.get('/api/getAllCandidates', function(req, res) {
+  //d = getAllCandidates(res)
+  
+  getAll2(res)
+//res.send("ASD")
+  
+
+
+});
+
+
+
+
+function getAll2(res){
+  
+  data = []
+  sequelize.query("SELECT * FROM `Postulado`", { type: sequelize.QueryTypes.SELECT})
+  .then(row => {
+    console.log("ASD" + JSON.stringify(row))
+    res.send(JSON.stringify(row))
+  })
+  console.log("length" + data.length)
+
+}
+
+
+function getAllCandidates(res){
+
+  connection.query('SELECT * FROM Postulado', (err,rows) => {
+    if(err) throw err;
+    data = []
+    console.log('Data received from Db:\n');
+    rows.forEach( (row) => {
+      
+      p = new Object()
+      p.apellido=row.apellido
+      p.nombre=row.nombre
+      p.edad=row.edad
+      p.campo=row.campo
+      p.provincia=row.provincia
+      p.motivo_post=row.motivo_post
+      p.extracto=row.extracto
+      p.foto=row.foto
+      p.video=row.video
+      p.audio=row.audio
+      p.email=row.email
+      p.mail_tercero=row.mail_tercero
+      p.telefono=row.telefono
+      p.telefono_tercero=row.telefono_tercero
+      data.push(p)
+      console.log(p)
+      console.log(`${row.nombre} y su apellido ${row.apellido} y ${row}`);
+    //res.send(row.nombre+row.apellido)
+    //asd();
+    //return data
+    console.log("send d")
+    res.send((d))
+  });
+    //console.log("DATAAAAAAAAAA   " +data[0].nombre)
+    
+    
+  })
+
+}
+
+
+
+
 
 const connection = mysql.createConnection({
   host: 'localhost',
