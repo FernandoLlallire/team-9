@@ -81,6 +81,7 @@ class AdminView extends React.Component {
                         mail:"daniela@mail.com" }]
         };
         this.onClick= this.onClick.bind(this);
+        this.filter=this.filter.bind(this);
     }
 
     componentDidMount(){
@@ -139,6 +140,7 @@ class AdminView extends React.Component {
                     seleccionadas={this.state.selected}
                     nombresSelec={this.state.selectedNames}
                     setWinners={this.props.setWinners}
+                    filter={this.filter}
                 />
             </div>
         );
