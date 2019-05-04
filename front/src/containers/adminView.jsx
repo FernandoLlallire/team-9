@@ -124,7 +124,7 @@ class AdminView extends React.Component {
             <h1>Seleccion de reconocidas</h1>                    
                 </div>
                 <CandidateTable
-                    candidates={this.state.candidates}
+                    candidates={this.props.candidatas}
                     onClick={this.onClick}
                     seleccionadas={this.state.selected}
                     nombresSelec={this.state.selectedNames}
@@ -137,7 +137,7 @@ class AdminView extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        probando: state.adminReducer.nothingForNow
+        candidatas: state.adminReducer.candidatos
     };
 }
 
