@@ -67,6 +67,22 @@ const candidate = (props) => {
               <label htmlFor="number">* e-mail aplicante</label>
               <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="mail_tercero" placeholder="emailTercero" name='telefono_tercero' />
             </div>
+            <div className="form-group">
+              <label htmlFor="number">* Motivo</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="motivo" placeholder="motivo" name='motivo_post' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* Foto</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="foto" placeholder="foto" name='foto' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* Video</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="video" placeholder="video" name='video' />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number">* Audio</label>
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="audio" placeholder="audio" name='audio' />
+            </div>
             <div>
               <button onSubmit={props.onSubmit} type="submit" className="btn boton btn-lg botonLogin btn-primary" data-toggle="modal" data-target="#exampleModal">Add Applicant</button>
               {/* <button onClick={() => props.onClick()} className="btn boton btn-lg botonLogin btn-primary" >View All Candidates</button> */}
