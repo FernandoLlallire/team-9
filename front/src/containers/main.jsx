@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Home from '../components/home';
+import Home from '../components/Home';
 import AddCandidate from '../containers/AddCandidate'
+import NavBar from '../components/NavBar'
 
 export default class Main extends React.Component {
   componentDidMount() {};
-  
+
 
   render() {
     return (
       <div>
+        <NavBar/>
         <section>
           <Switch>
             <Route path="/home" render={() => <Home />} />

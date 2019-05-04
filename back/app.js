@@ -39,12 +39,12 @@ app.post('/api/addCandidate', function(req, res) {
   });  
 */
 
-  if(insertPostulado(req.body)){
-    res.send(200)
+  if(insertPostulado(req.body.candidate)){
+    res.send("ok")
   }
   
   else{
-    res.send(403)
+    res.send("wrong")
   }
 
 
@@ -52,17 +52,15 @@ app.post('/api/addCandidate', function(req, res) {
 
 
 function insertPostulado(postulado){
-
+  console.log(postulado);
  query = "CALL addCandidate(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
- connection.query(query,[postulado.nombre,postulado.apellido,postulado.edad,postulado.campo,postulado.provincia,postulado.motivoPost,postulado.extra,postulado.foto,postulado.video,
-   postulado.audio,postulado.mail,postulado.mailTercero,postulado.telefono,postulado.telefonoTercero],function(err,rows){
-       if(err){ console.log("error en addpostulado"); return false;}
+ connection.query(query,[postulado.nombre,postulado.apellido,postulado.edad,postulado.campo,postulado.provincia,postulado.motivo_post,postulado.extracto,postulado.foto,postulado.video,
+   postulado.audio,postulado.email,postulado.mail_tercero,postulado.telefono,postulado.telefono_tercero],function(err,rows){
+       if(err){ console.log(err); return false;}
        console.log(rows);
        console.log("add postulado ok");
        return true;
    });
-  
-
 }
 
 
