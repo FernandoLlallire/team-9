@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from '../components/Home';
 import AddCandidate from '../containers/AddCandidate'
 import NavBar from '../components/NavBar'
+import Profile from '../components/Profile'
 
 export default class Main extends React.Component {
   componentDidMount() {};
@@ -17,6 +18,7 @@ export default class Main extends React.Component {
           <Switch>
             <Route path="/home" render={() => <Home />} />
             <Route exact path="/addCandidate" render={({ history }) => (<AddCandidate history={history} />)} />
+            <Route exact path="/profile" render={({ history }) => (<Profile history={history} />)} />
             {/* <Redirect from="/" to="/home" /> */}
           </Switch>
         </section>
