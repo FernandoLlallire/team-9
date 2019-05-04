@@ -29,23 +29,17 @@ const candidate = (props) => {
         <div className='col-lg-6 addUser'>
           <form onSubmit={props.onSubmit} className='formUser' >
             <h1 className='titHomeForms'>Agregar nueva candidata</h1>
-            <small>(<b>*</b>) Campos requeridos</small>
-            <p/>
             <div className="form-group " >
-              <label htmlFor="lastName">* Nombre</label>
-              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="nombre" placeholder="nombre" name='nombre' />
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="nombre" placeholder="* Nombre" name='nombre' />
             </div>
             <div className="form-group">
-              <label htmlFor="firsstName">* Apellido</label>
-              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="apellido" placeholder="apellido" name='apellido' />
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="apellido" placeholder="* Apellido" name='apellido' />
             </div>
             <div className="form-group">
-              <label htmlFor="email">* Edad</label>
-              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="edad" placeholder="edad" name='edad' />
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="edad" placeholder="* Edad" name='edad' />
             </div>
             <div className="form-group">
-              <label htmlFor="number">* e-mail</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="email" placeholder="e-mail" name='email' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="email" placeholder="* E-mail" name='email' />
             </div>
             <div className="form-group">
               <label htmlFor="number">* Teléfono</label>
