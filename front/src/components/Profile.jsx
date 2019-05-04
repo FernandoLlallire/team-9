@@ -31,7 +31,7 @@ const profile = (props) => {
       </div>
       <div className="row descriptionProfile justify-content-center align-items-center">
         <div className="col-md-5">
-          <object classNAme= "youtubeProfile" data="https://www.youtube.com/embed/VYgzKZ3-TV8" width="560px" height="400px">
+          <object className= "youtubeProfile" data="https://www.youtube.com/embed/VYgzKZ3-TV8" width="560px" height="400px">
           </object>
         </div>
         <div className="col-md-4 justify-content-center align-items-center">

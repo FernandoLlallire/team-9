@@ -51,32 +51,32 @@ class AdminView extends React.Component {
         this.state = {
             selected: [],
             selectedNames: [],
-            candidates: [ { id: 1, 
-                        nombre: "Sandra", 
-                        apellido:"Gomez", 
+            candidates: [ { id: 1,
+                        nombre: "Sandra",
+                        apellido:"Gomez",
                         telefono: "11112222",
                         mail: "sandra@mail.com",
                         extracto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit," },
-                      { id: 2, 
-                        nombre: "Carla", 
-                        apellido:"Perez", 
+                      { id: 2,
+                        nombre: "Carla",
+                        apellido:"Perez",
                         telefono: "113245222",
                         mail: "carla@mail.com",
                         extracto: "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo" },
-                      { id: 3, 
-                        nombre: "Marina", 
-                        apellido:"GArcia", 
+                      { id: 3,
+                        nombre: "Marina",
+                        apellido:"GArcia",
                         telefono: "4444455",
                         mail:"marina@mail.com",
-                        extracto: " Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit " }, 
-                      { id: 4, 
-                        nombre: "Perla", 
-                        apellido:"Mercado", 
+                        extracto: " Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit " },
+                      { id: 4,
+                        nombre: "Perla",
+                        apellido:"Mercado",
                         telefono: "9983663",
                         mail:"perla@mail.com" },
-                      { id: 5, 
-                        nombre: "Daniela", 
-                        apellido:"Gonzalez", 
+                      { id: 5,
+                        nombre: "Daniela",
+                        apellido:"Gonzalez",
                         telefono: "15141432",
                         mail:"daniela@mail.com" }]
         };
@@ -105,23 +105,23 @@ class AdminView extends React.Component {
     // }
 
     render() {
-    
+
         return (
-            <div class="graphContainer">
-                  <div class="row">
-                    <div class="col-sm">
-                        <h3 class="text-center"> Chicas por area profesional</h3>
+            <div className="graphContainer">
+                  <div className="row">
+                    <div className="col-sm">
+                        <h3 className="text-center textBeforeGraph"> Chicas por area profesional</h3>
                         <LineChart data={data} width="600" height="250"/>
                     </div>
-                    <div class="col-sm">
+                    <div className="col-sm">
                     </div>
-                    <div class="col-sm">
-                      <h3 class="text-center"> Chicas por edad </h3>
+                    <div className="col-sm">
+                      <h3 className="text-center textBeforeGraph"> Chicas por edad </h3>
                       <PieChart data={dataPie} width="600" height="250" />
                     </div>
                   </div>
                 <div>
-            <h1>Seleccion de reconocidas</h1>                    
+            <h1 className="text-center titleTable">Seleccion de reconocidas</h1>
                 </div>
                 <CandidateTable
                     candidates={this.state.candidates}
