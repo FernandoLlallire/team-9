@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from '../components/home';
+import AddCandidate from '../containers/AddCandidate'
 
 export default class Main extends React.Component {
   componentDidMount() {};
@@ -13,7 +14,8 @@ export default class Main extends React.Component {
         <section>
           <Switch>
             <Route path="/home" render={() => <Home />} />
-            <Redirect from="/" to="/home" />
+            <Route exact path="/addCandidate" render={({ history }) => (<AddCandidate history={history} />)} />
+            {/* <Redirect from="/" to="/home" /> */}
           </Switch>
         </section>
       </div>
