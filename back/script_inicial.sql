@@ -83,3 +83,26 @@ BEGIN
 END
 
 SELECT * FROM Postulado
+
+insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero);
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Ana','Perez',30,'Software','Cordoba','Excelente profesional!','Ingeniera en Sistemas con mas de 15 años de experiencia en el diseño de soluciones para ONGs.        Tambien se desarrolla en el area de investigaciones del CONICET y es una profesional renombrada a nivel mundial por sus publicaciones en inteligencia artificial.','','','','ana_perez2000@hotmail.com','tempmail@fake.com',88224646,78963214);
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Gabriela','Ferrero',21,'Robotica','Rio Negro','Buena Gente','Lorem ipsum','','','','ferrero.gabi1997@yahoo.com.ar','tempmail@fake.com','78963214','46468822');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Patricia','Garcia',46,'Telecomunicaciones','CABA','Admirable','Gracias a su conocimiento se logro el desarrollo de un satelite que permite monitorear el rendimiento de los campos argentinos','','','','patrigarcia00@hotmail.com','tempmail@fake.com','91344934','64942914');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Marta','Conde',33,'Nanotecnología','CABA','Entusiasmo','Lorem ipsum','','','','marconde@aol.com','tempmail@fake.com','94344925','49338465');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Florencia','Gonzalez',18,'Electronica','Neuquen','Potencial','Lorem ipsum','','','','flor_gonza01@gmail.com','tempmail@fake.com','45648616','34594867');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Silvia','Lopez',28,'Software','Corrientes','Ganas','Lorem ipsum','','','','lopez.sil2017@outlook.com','tempmail@fake.com','49683795','49347591');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Noemi','Torres',30,'Software','Santa Fe','Talento','Lorem ipsum','','','','noetorres_2000@hotmail.com','tempmail@fake.com','49791293','61676347');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Ayelen','Solis',20,'UX design','Entre Rios','Inspiración','Lorem ipsum','','','','ayesol2015@gmail.com','tempmail@fake.com','49234710','49347651');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Amalia','Fiorino',37,'Robotica','Jujuy','Talento','Lorem ipsum','','','','amalia.fiorino27@gmail.com','tempmail@fake.com','44947637','68301647');
+    insert into Postulado (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero)
+    values ('Lucia','Moreno',20,'matematica','Tierra del Fuego','Potencial','','','','','lumoreno2000@hotmail.com','tempmail@fake.com','40420613','49167546');
