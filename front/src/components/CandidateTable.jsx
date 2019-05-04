@@ -18,10 +18,10 @@ export default class CandidateTable extends React.Component {
             Filtrar
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <button class="dropdown-item" onClick={()=>this.props.filter()}>Ciencia</button>
-            <a class="dropdown-item" href="#">Matemática</a>
-            <a class="dropdown-item" href="#">Ingeniería</a>
-            <a class="dropdown-item" href="#">Tecnoglía</a>
+            <button class="dropdown-item" onClick={()=>this.props.filter("Ciencia")}>Ciencia</button>
+            <button class="dropdown-item" onClick={()=>this.props.filter("Matematica")}>Matematica</button>
+            <button class="dropdown-item" onClick={()=>this.props.filter("Tecnologia")}>Tecnologia</button>
+            <button class="dropdown-item" onClick={()=>this.props.filter("Ingenieria")}>Ingenieria</button>
           </div>
         </div>
 

@@ -100,11 +100,11 @@ class AdminView extends React.Component {
             this.props.history.push(`/profile/${candidateID}`)
         }
     }
-    filter(){
+    filter(parametro){
             let auxArray= this.props.candidatas;
             let arrFiltrado=[];
             for (let i=0; i<auxArray.length; i++){
-                if (auxArray[i].campo==="Ciencia"){
+                if (auxArray[i].campo===parametro){
                     arrFiltrado.push(auxArray[i]);
                 }
             }
