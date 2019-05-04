@@ -38,11 +38,11 @@ app.post('/api/savePostulado', function(req, res) {
 */
 
   if(insertPostulado(req.body)){
-    res.send(200)
+    res.send("ok")
   }
   
   else{
-    res.send(403)
+    res.send("wrong")
   }
 
 
@@ -105,6 +105,6 @@ sequelize.authenticate()
 
 
 
-server.listen(3000, function() {
-  console.log("Node server running on http://localhost:3000");
+server.listen(3001, function() {
+  console.log("Node server running on http://localhost:3001");
 });
