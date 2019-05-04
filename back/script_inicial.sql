@@ -9,6 +9,7 @@ create table Postulado (
     campo varchar(255),
     motivo_post varchar(500),
     extracto varchar (1000),
+    provincia varchar(255),
     foto varchar(500),
     video varchar(500),
     audio varchar(500),
@@ -36,6 +37,7 @@ create table Rechazado (
 
 drop table Aceptado;
 drop table Rechazado;
+drop table Postulado;
 
 insert into Postulado (nombre,apellido,edad,campo,motivo_post,extracto) values ('code','good',23,'Ciencias Marinas',
                                                                             'Es una genia!','Soy estudiante');
@@ -79,3 +81,5 @@ CREATE PROCEDURE rejectCandidate (
 BEGIN
     INSERT INTO Rechazado (id_postulado, motivo) VALUES (id,motivo);
 END
+
+SELECT * FROM Postulado
