@@ -64,7 +64,21 @@ function insertPostulado(postulado){
 }
 
 
+app.get('/api/getWinners', function(req, res) {
+  console.log("getwinners")
+  getWinners(res)
 
+
+});
+
+function getWinners(res){
+  query = "SELECT * FROM Postulado p join Aceptado a on p.id=a.id_postulado"
+  sequelize.query(query, { type: sequelize.QueryTypes.SELECT})
+  .then(row => {
+    console.log("ASD" + JSON.stringify(row))
+    res.send(JSON.stringify(row))
+  })
+}
 
 app.post('/api/setWinners', function(req, res) {
   console.log("SETSELEEE")
