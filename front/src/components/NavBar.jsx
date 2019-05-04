@@ -51,6 +51,11 @@ const navBar = (props) => {
               Agregar Candidatos
              <span className="sr-only">(current)</span></a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/adminView">
+              Admin View
+             <span className="sr-only">(current)</span></a>
+          </li>
         </ul>
       </div>
     </nav>

@@ -5,6 +5,7 @@ import Home from '../components/Home';
 import AddCandidate from './AddCandidate';
 import AdminView from './adminView';
 import NavBar from '../components/NavBar';
+import Profile from '../components/Profile'
 
 export default class Main extends React.Component {
   componentDidMount() {};
