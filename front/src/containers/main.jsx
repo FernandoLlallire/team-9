@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from '../components/home';
 import AddCandidate from '../containers/AddCandidate'
+import AdminView from '../containers/AdminView'
 
 export default class Main extends React.Component {
   componentDidMount() {};
@@ -15,6 +16,7 @@ export default class Main extends React.Component {
           <Switch>
             <Route path="/home" render={() => <Home />} />
             <Route exact path="/addCandidate" render={({ history }) => (<AddCandidate history={history} />)} />
+            <Route exact path="/adminView" render={({ history }) => (<AdminView history={history} />)} />
             {/* <Redirect from="/" to="/home" /> */}
           </Switch>
         </section>

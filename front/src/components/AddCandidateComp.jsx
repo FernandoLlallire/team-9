@@ -57,7 +57,7 @@ const candidate = (props) => {
             </div>
             <div className="form-group">
               <label htmlFor="workExperince">Extracto</label>
-              <textarea onChange={props.onChange} className="form-control inputLogin" id="WorkExperience" rows="3" name="expertise"></textarea>
+              <textarea onChange={props.onChange} className="form-control inputLogin" id="WorkExperience" rows="3" name="extracto"></textarea>
             </div>
             <div className="form-group">
               <label htmlFor="number">* Teléfono aplicante</label>
