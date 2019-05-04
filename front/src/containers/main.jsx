@@ -5,6 +5,7 @@ import Home from '../components/Home';
 import AddCandidate from './AddCandidate';
 import AdminView from './adminView';
 import NavBar from '../components/NavBar';
+import Profile from '../components/Profile'
 
 export default class Main extends React.Component {
   componentDidMount() {};
@@ -18,6 +19,7 @@ export default class Main extends React.Component {
           <Switch>
             <Route path="/home" render={() => <Home />} />
             <Route exact path="/addCandidate" render={({ history }) => (<AddCandidate history={history} />)} />
+            <Route exact path="/profile" render={({ history }) => (<Profile history={history} />)} />
             <Route exact path="/adminView" render={({ history }) => (<AdminView history={history} />)} />
             {/* <Redirect from="/" to="/home" /> */}
           </Switch>
