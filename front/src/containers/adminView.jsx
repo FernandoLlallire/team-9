@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import CandidateTable from '../components/CandidateTable'
-import { saveCandidate } from '../store/actions/actions'
+import { saveCandidate, fetchCandidates } from '../store/actions/actions'
 
 var dataPie = [
     {
@@ -50,30 +50,39 @@ class AdminView extends React.Component {
         super(props);
         this.state = {
             status: 'nada',
-            candidates: [ { nombre: "Sandra", 
+            candidates: [ { id: 1, 
+                        nombre: "Sandra", 
                         apellido:"Gomez", 
                         telefono: "11112222",
                         mail: "sandra@mail.com",
                         extracto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit," },
-                      { nombre: "Carla", 
+                      { id: 2, 
+                        nombre: "Carla", 
                         apellido:"Perez", 
                         telefono: "113245222",
                         mail: "carla@mail.com",
                         extracto: "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo" },
-                      { nombre: "Marina", 
+                      { id: 3, 
+                        nombre: "Marina", 
                         apellido:"GArcia", 
                         telefono: "4444455",
                         mail:"marina@mail.com",
                         extracto: " Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit " }, 
-                      { nombre: "Perla", 
+                      { id: 4, 
+                        nombre: "Perla", 
                         apellido:"Mercado", 
                         telefono: "9983663",
                         mail:"perla@mail.com" },
-                      { nombre: "Daniela", 
+                      { id: 5, 
+                        nombre: "Daniela", 
                         apellido:"Gonzalez", 
                         telefono: "15141432",
                         mail:"daniela@mail.com" }]
         };
+    }
+
+    componentDidMount(){
+        this.props.fetchCandidates();
     }
 
     render() {
@@ -111,7 +120,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        saveCandidate: (candidate) => dispatch(saveCandidate(candidate))
+        saveCandidate: (candidate) => dispatch(saveCandidate(candidate)),
+        fetchCandidates: () => dispatch(fetchCandidates())
     };
 }
 
