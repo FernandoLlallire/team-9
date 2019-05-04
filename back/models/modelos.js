@@ -1,8 +1,4 @@
-var mongoose = require('mongoose'),
-	Postulado = mongoose.Postulado,
-	Aceptado = mongoose.Aceptado,
-	Rechazado = mongoose.Rechazado;
-	
+
 
 var postulado = new Postulado({
 	id:         { type: Number},

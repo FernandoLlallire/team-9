@@ -24,8 +24,8 @@ app.get('/', function(req, res) {
   res.send("Hello world!");
 });
 
-app.get('/alldata', function(req, res) {
-  connection.query('SELECT * FROM Postulado', (err,rows) => {
+app.post('/api/savePostulado', function(req, res) {
+  /*connection.query('SELECT * FROM Postulado', (err,rows) => {
     if(err) throw err;
 
     console.log('Data received from Db:\n');
@@ -35,11 +35,36 @@ app.get('/alldata', function(req, res) {
     asd();
     });
   });  
+*/
+
+  if(insertPostulado(req.body)){
+    res.send(200)
+  }
+  
+  else{
+    res.send(403)
+  }
 
 
 });
 
-routes = require('./routes/tvshow')(app);
+
+function insertPostulado(postulado){
+
+ query = "CALL addCandidate(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+ connection.query(query,[postulado.nombre,postulado.apellido,postulado.edad,postulado.campo,postulado.provincia,postulado.motivoPost,postulado.extra,postulado.foto,postulado.video,
+   postulado.audio,postulado.mail,postulado.mailTercero,postulado.telefono,postulado.telefonoTercero],function(err,rows){
+       if(err){ console.log("error en addpostulado"); return false;}
+       console.log(rows);
+       console.log("add postulado ok");
+       return true;
+   });
+  
+
+}
+
+
+//routes = require('./routes/tvshow')(app);
 
 function asd(){
   console.log("ASD");
