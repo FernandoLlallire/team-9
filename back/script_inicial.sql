@@ -16,8 +16,7 @@ create table Postulado (
     mail_tercero varchar(255),
     telefono varchar(255),
     telefono_tercero varchar(255),
-    primary key  (id))
-;
+    primary key  (id));
 
 create table Aceptado (
     id int not null auto_increment,
@@ -62,8 +61,8 @@ BEGIN
     values (nombre,apellido,edad,campo,provincia,motivo_post,extracto,foto,video,audio,mail,mail_tercero,telefono,telefono_tercero);
 END
 
-call addPostulado('maria','perez','25','matematica','formosa','la agrego pq es muy buena','maria estudio en la uba tiene un posgrado y 2 papers','http:linkfoto','linkvideo','linkaudio','',
-    'mailtercero@gmail.com','','114222');
+--call addPostulado('maria','perez','25','matematica','formosa','la agrego pq es muy buena','maria estudio en la uba tiene un posgrado y 2 papers','http:linkfoto','linkvideo','linkaudio','',
+    --'mailtercero@gmail.com','','114222');
 
 
 CREATE PROCEDURE addSelectedCandidate (
