@@ -25,8 +25,8 @@ render(){
         <div className="col-md-1">
         </div>
         <div className="col-md-4">
-          <h1 className="profileName">Nombre Completo</h1>
-          <h3 className="profileName">Rubro de especialidad</h3>
+          <h1 className="profileName">{this.props.candidata.nombre + " " + this.props.candidata.apellido}}</h1>
+          <h3 className="profileName">{this.props.candidata.campo}</h3>
           <div className="contaierSocialMedia">
             <a href="#" className="fa fa-facebook iconZise"></a>
             <a href="#" className="fa fa-twitter iconZise"></a>
@@ -39,7 +39,7 @@ render(){
       </div>
       <div className="row descriptionProfile justify-content-center">
         <div className="col-md-10 ">
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          <p> {this.props.candidata.extracto}} </p>
         </div>
       </div>
       <div className="row descriptionProfile justify-content-center align-items-center">
