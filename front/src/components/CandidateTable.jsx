@@ -19,6 +19,7 @@ export default class CandidateTable extends React.Component {
             <th scope="col" className='tableHeading'>NOMBRE</th>
             <th scope="col" className='tableHeading'>TELEFONO</th>
             <th scope="col" className='tableHeading'>MAIL</th>
+            <th scope="col" className='tableHeading'>CAMPO</th>
             <th scope="col" className='tableHeading'>EXTRACTO</th>
           </tr>
         </thead>
@@ -33,6 +34,9 @@ export default class CandidateTable extends React.Component {
                 </td>
                 <td style={{ verticalAlign: 'middle' }} className='tableHeading '>
                   {candidate.mail}
+                </td>
+                <td style={{ verticalAlign: 'middle' }} className='tableHeading '>
+                  {candidate.campo}
                 </td>
                 <td style={{ verticalAlign: 'middle' }} className='tableHeading '>
                   {candidate.extracto}
