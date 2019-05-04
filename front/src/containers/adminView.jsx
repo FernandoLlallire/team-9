@@ -2,13 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import CandidateTable from '../components/CandidateTable'
-import { saveCandidate, fetchCandidates } from '../store/actions/actions'
+import { saveCandidate, fetchCandidates, setWinners } from '../store/actions/actions'
 
 class AdminView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            status: 'nada',
+            selected: [],
+            selectedNames: [],
             candidates: [ { id: 1, 
                         nombre: "Sandra", 
                         apellido:"Gomez", 
@@ -38,11 +39,29 @@ class AdminView extends React.Component {
                         telefono: "15141432",
                         mail:"daniela@mail.com" }]
         };
+        this.onClick= this.onClick.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchCandidates();
     }
+
+    onClick(candidateID, option, nombre){
+        if(option==="select")
+            {
+            let auxArray= this.state.selected;
+            let auxArrayNames= this.state.selectedNames;
+            auxArray.push(candidateID);
+            auxArrayNames.push(nombre);
+            this.setState({ selected: auxArray, selectedNames: auxArrayNames });
+        }else{
+            this.props.history.push(`/profile/${candidateID}`)
+        }
+    }
+
+    // setWinners(winners){
+    //     this.props.setWinners(winners);
+    // }
 
     render() {
         return (
@@ -50,6 +69,10 @@ class AdminView extends React.Component {
                 <h1>Administradora</h1>
                 <CandidateTable
                     candidates={this.state.candidates}
+                    onClick={this.onClick}
+                    seleccionadas={this.state.selected}
+                    nombresSelec={this.state.selectedNames}
+                    setWinners={this.props.setWinners}
                 />
             </div>
         );
@@ -65,7 +88,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         saveCandidate: (candidate) => dispatch(saveCandidate(candidate)),
-        fetchCandidates: () => dispatch(fetchCandidates())
+        fetchCandidates: () => dispatch(fetchCandidates()),
+        setWinners: (winners) => dispatch(setWinners(winners))
     };
 }
 
