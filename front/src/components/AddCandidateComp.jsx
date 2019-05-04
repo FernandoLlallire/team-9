@@ -44,6 +44,10 @@ const candidate = (props) => {
               <input onChange={props.onChange} type="text" className="form-control inputLogin" id="edad" placeholder="edad" name='edad' />
             </div>
             <div className="form-group">
+              <label htmlFor="email">* Provincia</label>
+              <input onChange={props.onChange} type="text" className="form-control inputLogin" id="provincia" placeholder="provincia" name='provincia' />
+            </div>            
+            <div className="form-group">
               <label htmlFor="number">* e-mail</label>
               <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="email" placeholder="e-mail" name='email' />
             </div>
@@ -57,7 +61,7 @@ const candidate = (props) => {
             </div>
             <div className="form-group">
               <label htmlFor="workExperince">Extracto</label>
-              <textarea onChange={props.onChange} className="form-control inputLogin" id="WorkExperience" rows="3" name="expertise"></textarea>
+              <textarea onChange={props.onChange} className="form-control inputLogin" id="WorkExperience" rows="3" name="extracto"></textarea>
             </div>
             <div className="form-group">
               <label htmlFor="number">* Teléfono aplicante</label>
@@ -65,7 +69,7 @@ const candidate = (props) => {
             </div>
             <div className="form-group">
               <label htmlFor="number">* e-mail aplicante</label>
-              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="mail_tercero" placeholder="emailTercero" name='telefono_tercero' />
+              <input onChange={props.onChange} type="tel" className="form-control inputLogin" id="mail_tercero" placeholder="emailTercero" name='mail_tercero' />
             </div>
             <div className="form-group">
               <label htmlFor="number">* Motivo</label>
