@@ -12,12 +12,7 @@ class AdminView extends React.Component {
             selected: [],
             selectedNames: [],
         };
-<<<<<<< HEAD
         this.filter=this.filter.bind(this);
-=======
-        //this.onClick= this.onClick.bind(this);
-        //this.filter=this.filter.bind(this);
->>>>>>> 95b13b9be331d6669791f7de5c49253f3491f96a
     }
 
     componentDidMount(){
