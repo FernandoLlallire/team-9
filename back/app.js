@@ -24,9 +24,26 @@ app.get('/', function(req, res) {
   res.send("Hello world!");
 });
 
-routes = require('./routes/tvshow')(app);
-routes = require('./routes/apiv1')(app);
+app.get('/alldata', function(req, res) {
+  connection.query('SELECT * FROM Postulado', (err,rows) => {
+    if(err) throw err;
 
+    console.log('Data received from Db:\n');
+    rows.forEach( (row) => {
+      console.log(`${row.nombre} y su apellido ${row.apellido}`);
+    res.send(row.nombre+row.apellido)
+    asd();
+    });
+  });  
+
+
+});
+
+routes = require('./routes/tvshow')(app);
+
+function asd(){
+  console.log("ASD");
+}
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -62,15 +79,7 @@ sequelize.authenticate()
   })
 
 
-/*mongoose.connect('mongodb://localhost/tvshows', function(err, res) {
-  useNewUrlParser: true;
-  if(err) {
-    console.log('ERROR: connecting to Database. ' + err);
-  } else {
-    console.log('Connected to Database');
-  }
-});
-*/
+
 server.listen(3000, function() {
   console.log("Node server running on http://localhost:3000");
 });
