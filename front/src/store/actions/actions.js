@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {DO_NOTHING , SET_CANDIDATOS, SET_CANDIDATA
+import {DO_NOTHING , SET_CANDIDATOS, SET_CANDIDATA,SET_WINNERS
 } from '../constants';
 
 
@@ -18,6 +18,7 @@ export const setCandidates = function setCandidates(candidatos) {
 };
 
 export const setWinnersss = function setWinners(winners) {
+  console.log(winners)
   return {
     type: SET_WINNERS,
     winners,
@@ -58,4 +59,4 @@ export const fetchCandidate = (idCand) => dispatch =>
 export const fetchWinners = () => dispatch =>
   axios.get('http://localhost:3001/api/getWinners')
     .then(res => res.data)
-    .then(winners => dispatch(setWinners(winners)));
+    .then(winners => dispatch(setWinnersss(winners)));
